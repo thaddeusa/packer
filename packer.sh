@@ -32,14 +32,6 @@ function packer_build () {
   $env.json
 }
 
-function az-automation () {
-  az-automation \
-  -a 2c4abd34-0cef-4c27-b897-ccfe4ac01f56 \
-  -d ta-packer \
-  -i http://ta-packer \
-  -c packer-creds.sh
-}
-
 case $1 in
   validate)
      packer_validate
