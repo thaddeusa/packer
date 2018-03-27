@@ -1,0 +1,48 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": "",
+    "aws_region": ""
+  },
+  "builders": [
+    {
+      "access_key": "{{user `aws_access_key`}}",
+      "ami_name": "packer-jumpbox-{{timestamp}}",
+      "instance_type": "t2.micro",
+      "region": "{{user `aws_region`}}",
+      "secret_key": "{{user `aws_secret_key`}}",
+      "source_ami_filter": {
+        "filters": {
+          "virtualization-type": "hvm",
+          "name": "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*",
+          "root-device-type": "ebs"
+        },
+        "owners": [
+          "099720109477"
+        ],
+        "most_recent": true
+      },
+      "ssh_username": "ubuntu",
+      "type": "amazon-ebs",
+      "tags": {
+        "OS_Version": "Ubuntu",
+        "Creator": "creator-name"
+      },
+      "snapshot_tags": {
+        "Creator": "packer-jumpbox"
+      }
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sleep 20"
+      ]
+    },
+    {
+      "type": "shell",
+      "script": "./packer-jumpbox.sh"
+    }
+  ]
+}

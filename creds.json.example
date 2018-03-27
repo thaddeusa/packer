@@ -1,0 +1,13 @@
+{
+  "aws_access_key": "AKIAXXXXXX",
+  "aws_secret_key": "8473XXXXXXXXXXXXXXXXXX",
+  "aws_region": "us-west-2",
+  "az_client_id": "ff-ee-ff-ee",
+  "az_client_secret": "asd-asdf-asdf-asdf",
+  "az_subscription_id": "asdf-asdf-asdf-asdf",
+  "az_tenant_id": "asdf-asdf-asdf-asdf",
+  "az_storage_account": "storage-acct-name",
+  "az_location": "West Central US",
+  "az_rg_name": "resource-group-name",
+  "az_image_name": "image-name"
+}
