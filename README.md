@@ -4,7 +4,7 @@ Basic script to generate Packer image (AWS AMI and/or Azure Image) with essentia
 Base is Ubuntu 16.04
 
 ### Contains essential tools for Cloud Foundry and BOSH
-### Includes:
+### Includes the following, among others:
  - major cloud CLI's (AWS, Azure, GCP)
  - terraform
  - jq
